@@ -592,7 +592,7 @@ async function verifyIconUrls(data) {
   };
 
   // Save report to JSON file
-  const fs = await import('fs/promises');
+  const fs = await require('fs/promises');
   await fs.writeFile('icon-verification-report.json', JSON.stringify(report, null, 2), 'utf8');
 
   // Print summary
@@ -858,7 +858,7 @@ async function verifyClickUrls(data) {
   };
 
   // Save report to JSON file
-  const fs = await import('fs/promises');
+  const fs = await require('fs/promises');
   await fs.writeFile('clickurl-verification-report.json', JSON.stringify(report, null, 2), 'utf8');
 
   // Print summary
@@ -890,7 +890,7 @@ async function verifyClickUrls(data) {
 
 // Main execution: Login -> Verify -> Service Ticket -> Home Pages -> Icon Verification -> Click URL Verification
 async function main() {
-  const fs = await import('fs/promises');
+  const fs = await require('fs/promises');
   const responses = {
     timestamp: new Date().toISOString(),
     login: null,
