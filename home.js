@@ -100,16 +100,27 @@ async function callLoginAPI() {
 
 function extractAuthCode(data, response) {
   // Check response body for common auth code fields
-  if (data?.token) return data.token;
-  if (data?.access_token) return data.access_token;
-  if (data?.authCode) return data.authCode;
-  if (data?.auth_code) return data.auth_code;
-  if (data?.authorization) return data.authorization;
-  if (data?.data?.token) return data.data.token;
-  if (data?.data?.access_token) return data.data.access_token;
-  if (data?.data?.authCode) return data.data.authCode;
-  if (data?.result?.token) return data.result.token;
-  if (data?.result?.access_token) return data.result.access_token;
+  if (!data) return;
+
+  var d = data;
+  
+  if (d.token) return d.token;
+  if (d.access_token) return d.access_token;
+  if (d.authCode) return d.authCode;
+  if (d.auth_code) return d.auth_code;
+  if (d.authorization) return d.authorization;
+  
+  if (d.data) {
+    if (d.data.token) return d.data.token;
+    if (d.data.access_token) return d.data.access_token;
+    if (d.data.authCode) return d.data.authCode;
+  }
+  
+  if (d.result) {
+    if (d.result.token) return d.result.token;
+    if (d.result.access_token) return d.result.access_token;
+  }
+
   
   // Check response headers for authorization
   const authHeader = response.headers.get('authorization') || response.headers.get('Authorization');
@@ -178,14 +189,24 @@ async function verifyAuthCode(authCode) {
 
 function extractServiceTicket(data, response) {
   // Check response body for common service ticket fields
-  if (data?.serviceTicket) return data.serviceTicket;
-  if (data?.service_ticket) return data.service_ticket;
-  if (data?.ticket) return data.ticket;
-  if (data?.data?.serviceTicket) return data.data.serviceTicket;
-  if (data?.data?.service_ticket) return data.data.service_ticket;
-  if (data?.data?.ticket) return data.data.ticket;
-  if (data?.result?.serviceTicket) return data.result.serviceTicket;
-  if (data?.result?.service_ticket) return data.result.service_ticket;
+  if (!data) return;
+
+  var d = data;
+  
+  if (d.serviceTicket) return d.serviceTicket;
+  if (d.service_ticket) return d.service_ticket;
+  if (d.ticket) return d.ticket;
+  
+  if (d.data) {
+    if (d.data.serviceTicket) return d.data.serviceTicket;
+    if (d.data.service_ticket) return d.data.service_ticket;
+    if (d.data.ticket) return d.data.ticket;
+  }
+  
+  if (d.result) {
+    if (d.result.serviceTicket) return d.result.serviceTicket;
+    if (d.result.service_ticket) return d.result.service_ticket;
+  }
   
   return null;
 }
@@ -273,15 +294,25 @@ async function callServiceTicketAPI(serviceTicket) {
 
 function extractAccessToken(data, response) {
   // Check response body for common access token fields
-  if (data?.accessToken) return data.accessToken;
-  if (data?.access_token) return data.access_token;
-  if (data?.token) return data.token;
-  if (data?.data?.accessToken) return data.data.accessToken;
-  if (data?.data?.access_token) return data.data.access_token;
-  if (data?.data?.token) return data.data.token;
-  if (data?.result?.accessToken) return data.result.accessToken;
-  if (data?.result?.access_token) return data.result.access_token;
-  if (data?.result?.token) return data.result.token;
+  if (!data) return;
+
+  var d = data;
+  
+  if (d.accessToken) return d.accessToken;
+  if (d.access_token) return d.access_token;
+  if (d.token) return d.token;
+  
+  if (d.data) {
+    if (d.data.accessToken) return d.data.accessToken;
+    if (d.data.access_token) return d.data.access_token;
+    if (d.data.token) return d.data.token;
+  }
+  
+  if (d.result) {
+    if (d.result.accessToken) return d.result.accessToken;
+    if (d.result.access_token) return d.result.access_token;
+    if (d.result.token) return d.result.token;
+  }
   
   // Check response headers for authorization
   const authHeader = response.headers.get('authorization') || response.headers.get('Authorization');
