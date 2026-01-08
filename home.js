@@ -745,9 +745,6 @@ async function verifyClickUrls(data) {
   );
 
   console.log(`Found ${uniqueEndpoints.length} unique clickUrl endpoints\n`);
-
-  // Base URL
-  const baseUrl = 'https://preprod.tiket.com';
   
   // Build full URLs by combining base URL with endpoints
   const fullUrls = uniqueEndpoints.map(item => {
