@@ -393,9 +393,8 @@ async function verifyUrl(url, timeout = 10000) {
     clearTimeout(timeoutId);
 
     // Immediately cancel body stream to avoid downloading full content
-    if (response.body) {
-      const reader = response.body.getReader();
-      reader.cancel().catch(() => {});
+    if (response.body && typeof response.body.destroy === 'function') {
+      response.body.destroy();
     }
 
     const baseResult = {
@@ -432,9 +431,8 @@ async function verifyUrl(url, timeout = 10000) {
 
           clearTimeout(followTimeoutId);
 
-          if (redirectedResponse.body) {
-            const redirectedReader = redirectedResponse.body.getReader();
-            redirectedReader.cancel().catch(() => {});
+          if (redirectedResponse.body && typeof redirectedResponse.body.destroy === 'function') {
+            redirectedResponse.body.destroy();
           }
 
           const redirectedInfo = {
