@@ -57,8 +57,8 @@ async function callLoginAPI() {
 
   const body = {
     ref: baseUrl,
-    identity: params.id,    //'travelmanager@yopmail.com',
-    secret: params.secret,        //'Testing123!',
+    identity: params.id,
+    secret: params.secret,
     type: 'EMAIL_PASSWORD'
   };
 
