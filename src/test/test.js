@@ -6,7 +6,7 @@ const HomePage = require('../main/page/home/home.js');
 const { findAllUrls, verifyIconUrls, verifyClickUrls, findAllEndpoints } = require('../main/verify/verifyurls.js');
 
 async function test() {
-    const env = 'preprod';
+    const env = 'prod';
     const platform = 'android';
     const baseUrl = env === 'prod' ? 'https://www.tiket.com' : 'https://preprod.tiket.com';
     const loginPage = new LoginPage('travelmanager@yopmail.com', 'Testing123!', env);
