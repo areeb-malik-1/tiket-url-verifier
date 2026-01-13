@@ -47,14 +47,14 @@ class FlightPage {
 
     async hitApi() {
         const {url, headers} = this.getConfig();
-        const homeUrl = `${url}?availablePlatforms=ANDROID&isNotificationActive=true&pageModuleCode=HOME_V2&verticalIconVariant=control&variant=HOME_V2&vertical=HOME&headerVariant=newhome&platform=MOBILE`;
+        const flightUrl = `${url}?availablePlatforms=ANDROID&isNotificationActive=true&pageModuleCode=HOME_V2&verticalIconVariant=control&variant=HOME_V2&vertical=HOME&headerVariant=newhome&platform=MOBILE`;
         try {
-            const response = await fetch(homeUrl, {
+            const response = await fetch(flightUrl, {
               method: 'GET',
               headers: headers
             });
         
-            console.log('\n=== Home Pages API Response ===');
+            console.log('\n=== Flight Pages API Response ===');
             console.log('Status:', response.status);
             const contentType = response.headers.get('content-type') || '';
             
@@ -70,7 +70,7 @@ class FlightPage {
             
             return { data, status: response.status };
           } catch (error) {
-            console.error('Error calling home pages API:', error);
+            console.error('Error calling flight pages API:', error);
             throw error;
           }
     }
