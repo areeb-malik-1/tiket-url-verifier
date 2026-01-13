@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const urlProd = 'https://api.tiket.com/ms-gateway/tix-home/v2/page-modules-full';
 const urlPreprod = '';
 
@@ -47,7 +49,6 @@ class FlightPage {
         const {url, headers} = this.getConfig();
         const flightUrl = `${url}?availablePlatforms=ANDROID&isNotificationActive=true&pageModuleCode=HOME_V2&verticalIconVariant=control&variant=HOME_V2&vertical=HOME&headerVariant=newhome&platform=MOBILE`;
         try {
-            const fetch = require('node-fetch');
             const response = await fetch(flightUrl, {
               method: 'GET',
               headers: headers

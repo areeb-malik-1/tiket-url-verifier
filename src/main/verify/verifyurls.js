@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 // Function to recursively find all iconUrl values in an object
 function findAllUrls(obj, pkey, path = "", urls = []) {
   if (obj === null || obj === undefined) {
