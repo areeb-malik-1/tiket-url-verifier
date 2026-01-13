@@ -134,6 +134,7 @@ async function verifyAuthCode(authCode) {
   }
 
   const url = `${verificationUrl}?authCode=${encodeURIComponent(authCode)}`;
+  console.log('\nverification URL: ' + url);
   
   const headers = {
     'Accept-Language': 'en',
