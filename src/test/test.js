@@ -9,7 +9,8 @@ async function test() {
     const env = 'prod';
     const platform = 'android';
     const baseUrl = env === 'prod' ? 'https://www.tiket.com' : 'https://preprod.tiket.com';
-    const loginPage = new LoginPage('travelmanager@yopmail.com', 'Testing123!', env);
+    //const loginPage = new LoginPage('travelmanager@yopmail.com', 'Testing123!', env);
+    const loginPage = new LoginPage('Yanuar.kurniawan@tiket.com', 'Testing123', env);
     var {response, data} = await loginPage.hitApi();
     const authCode = loginPage.extractAuthCode(response, data);
     console.log('Auth Code: ' + authCode);
