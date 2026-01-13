@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const urlProd = 'https://tiket.com/ms-gateway/tix-home/v2/home-pages';
 const urlPreprod = 'https://preprod.tiket.com/ms-gateway/tix-home/v2/home-pages';
 
@@ -36,6 +34,7 @@ class HomePage {
         const {url, headers} = this.getConfig();
         const homeUrl = `${url}?availablePlatforms=ANDROID&isNotificationActive=true&pageModuleCode=HOME_V2&verticalIconVariant=control&variant=HOME_V2&vertical=HOME&headerVariant=newhome&platform=MOBILE`;
         try {
+            const fetch = require('node-fetch');
             const response = await fetch(homeUrl, {
               method: 'GET',
               headers: headers
