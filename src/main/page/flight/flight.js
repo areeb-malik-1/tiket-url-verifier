@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const urlProd = 'https://api.tiket.com/ms-gateway/tix-home/v2/page-modules-full';
-const urlPreprod = '';
+const urlPreprod = 'https://preprod.tiket.com/ms-gateway/tix-home/v2/page-modules-full';
 
 class FlightPage {
     constructor(accessToken, env, platform) {

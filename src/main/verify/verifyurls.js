@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 // Function to recursively find all iconUrl values in an object
 function findAllUrls(obj, pkey, path = "", urls = []) {
@@ -297,7 +297,7 @@ async function verifyIconUrls(iconUrls) {
     });
   }
 
-  return report;
+  return { report, failedUrls };
 }
 
 // Function to verify a URL with HEAD request
@@ -548,7 +548,12 @@ async function verifyClickUrls(clickUrls, baseUrl) {
     });
   }
 
-  return report;
+  return { report, failedUrls };
 }
 
-module.exports = { findAllUrls, verifyIconUrls, verifyClickUrls, findAllEndpoints};
+module.exports = {
+  findAllUrls,
+  verifyIconUrls,
+  verifyClickUrls,
+  findAllEndpoints,
+};
