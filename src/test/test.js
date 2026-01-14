@@ -56,7 +56,7 @@ async function test() {
     for (const key of api.iconKeys) {
       const iconUrls = findAllUrls(data, key);
       console.log('key: ' + key);
-      console.log(key + "s: " + clickUrls.length);
+      console.log(key + "s: " + iconUrls.length);
       const { result, failedUrls } = await verifyIconUrls(iconUrls);
       for (const url of failedUrls) {
         await slack(url);
