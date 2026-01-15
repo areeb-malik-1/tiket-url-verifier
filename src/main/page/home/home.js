@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const urlProd = 'https://tiket.com/ms-gateway/tix-home/v2/home-pages';
+const urlProd = 'https://api.tiket.com/ms-gateway/tix-home/v2/home-pages';
 const urlPreprod = 'https://preprod.tiket.com/ms-gateway/tix-home/v2/home-pages';
 
 class HomePage {
