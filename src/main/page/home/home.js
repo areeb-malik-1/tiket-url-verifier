@@ -35,6 +35,7 @@ class HomePage {
     async hitApi() {
         const {url, headers} = this.getConfig();
         const homeUrl = `${url}?availablePlatforms=ANDROID&isNotificationActive=true&pageModuleCode=HOME_V2&verticalIconVariant=control&variant=HOME_V2&vertical=HOME&headerVariant=newhome&platform=MOBILE`;
+        console.log("homeapi full url: " + homeUrl);
         try {
             const response = await fetch(homeUrl, {
               method: 'GET',
