@@ -15,7 +15,7 @@ async function test() {
   const env = "prod";
   const platform = "android";
   const baseUrl =
-    env === "prod" ? "https://www.tiket.com" : "https://preprod.tiket.com";
+    env === "prod" ? "https://api.tiket.com" : "https://preprod.tiket.com";
   // const loginPage = new LoginPage(
   //   "travelmanager@yopmail.com",
   //   "Testing123!",
