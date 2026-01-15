@@ -470,7 +470,7 @@ async function verifyClickUrls(clickUrls, baseUrl) {
       )}... `
     );
 
-    const verification = await verifyUrlWithHead(item.url);
+    const verification = await verifyUrl(item.url);
 
     const result = {
       url: item.url,
