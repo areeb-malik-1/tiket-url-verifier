@@ -265,7 +265,7 @@ async function verifyIconUrls(iconUrls) {
   // Save report to JSON file
   const fs = await import("fs/promises");
   await fs.writeFile(
-    "icon-verification-report.json",
+    `icon-verification-${Date.now()}report.json`,
     JSON.stringify(report, null, 2),
     "utf8"
   );
@@ -515,7 +515,7 @@ async function verifyClickUrls(clickUrls, baseUrl) {
   // Save report to JSON file
   const fs = await import("fs/promises");
   await fs.writeFile(
-    "clickurl-verification-report.json",
+    `clickurl-verification-${Date.now()}report.json`,
     JSON.stringify(report, null, 2),
     "utf8"
   );
